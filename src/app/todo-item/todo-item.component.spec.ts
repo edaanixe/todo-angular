@@ -26,8 +26,8 @@ describe('TodoItemComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display task as completed', () => {
-    component.completed = true;
+  it('should display task as status', () => {
+    component.status = true;
 
     fixture.detectChanges();
 
@@ -36,8 +36,8 @@ describe('TodoItemComponent', () => {
     expect(elem).toBeTruthy();
   });
 
-  it('should display task as checked', () => {
-    component.checked = true;
+  it('should display task as finished', () => {
+    component.status = true;
 
     fixture.detectChanges();
 
