@@ -1,0 +1,9 @@
+<li [class.completed]="completed">
+  <div class="form-check">
+    <label class="form-check-label">
+      <input class="checkbox" type="checkbox" [checked]="checked" />
+      <ng-content></ng-content> <i class="input-helper"></i>
+    </label>
+  </div>
+  <i class="fas fa-trash-alt remove" (click)="onClick($event)"></i>
+</li>
