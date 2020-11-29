@@ -1,0 +1,33 @@
+<div class="container d-flex justify-content-center">
+  <div class="card px-3 mt-5 w-100">
+    <div class="card-body">
+      <h4 class="card-title">{{ listTitle }}</h4>
+      <div class="add-items d-flex">
+        <input
+          type="text"
+          [formControl]="taskTitle"
+          class="form-control todo-list-input"
+          placeholder="What do you need to do today?"
+        />
+        <button
+          class="add btn btn-primary font-weight-bold todo-list-add-btn"
+          (click)="onClick(taskTitle.value)"
+        >
+          Add
+        </button>
+      </div>
+
+      <div class="list-wrapper">
+        <ul class="d-flex flex-column-reverse todo-list">
+          <app-todo-item
+            *ngFor="let task of tasks"
+            [completed]="task.completed"
+            (remove)="onRemove(task.id)"
+            (change)="onCompleted(task.id)"
+            >{{ task.title }}</app-todo-item
+          >
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
