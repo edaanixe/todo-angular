@@ -1,7 +1,7 @@
-<li [class.completed]="status">
+<li [class.completed]="completed">
   <div class="form-check">
     <label class="form-check-label">
-      <input class="checkbox" type="checkbox" [checked]="completed" (change)="completed.emit()" />
+      <input class="checkbox" type="checkbox" [checked]="completed"  (change)="change.emit()" />
       <ng-content></ng-content> <i class="input-helper"></i>
     </label>
   </div>

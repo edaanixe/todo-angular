@@ -26,8 +26,8 @@ describe('TodoItemComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display task as status', () => {
-    component.status = true;
+  it('should display task as completed', () => {
+    component.completed = true;
 
     fixture.detectChanges();
 
@@ -37,7 +37,7 @@ describe('TodoItemComponent', () => {
   });
 
   it('should display task as finished', () => {
-    component.status = true;
+    component.completed = true;
 
     fixture.detectChanges();
 
@@ -48,8 +48,6 @@ describe('TodoItemComponent', () => {
 
   it('should trigger onRemove event', () => {
     spyOn(component.remove, 'emit');
-
-    fixture.detectChanges();
 
     rootElement.query(By.css('.remove')).nativeElement.click();
 

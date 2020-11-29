@@ -1,12 +1,12 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-todo-item',
-  templateUrl: './todo-item.component.html',
-  styleUrls: ['./todo-item.component.css'],
+  templateUrl: './todo-item.component.html'
 })
 export class TodoItemComponent implements OnInit {
-  public status = false;
+  @Input()
+  public completed = false;
 
   constructor() {}
 
@@ -16,5 +16,5 @@ export class TodoItemComponent implements OnInit {
   remove: EventEmitter<any> = new EventEmitter<any>();
 
   @Output()
-  completed: EventEmitter<any> = new EventEmitter<any>();
+  change: EventEmitter<any> = new EventEmitter<any>();
 }
